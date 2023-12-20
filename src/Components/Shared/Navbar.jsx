@@ -28,7 +28,8 @@ const Navbar = () => {
         <div className='lg:px-10 py-6 bg-red-300 text-xl'>
             <div className='block lg:flex justify-between items-center space-y-3 relative'>
                 <div className='flex justify-between'>
-                    <h1 className='text-xl font-bold px-4'>Logo</h1>
+
+                    <img src="https://i.postimg.cc/13Nzyzw4/logooooooooooooooooooo11.jpg" alt="" className='rounded-full w-14'/>
                     <h1 onClick={()=> setShowMenu(!showMenu)} className='text-xl font-bold px-4 block lg:hidden'>X</h1>
                 </div>
                 <div className='hidden list-none lg:flex justify-center items-center gap-10'>
