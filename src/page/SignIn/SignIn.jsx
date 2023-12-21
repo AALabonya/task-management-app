@@ -1,6 +1,49 @@
-import { Link } from "react-router-dom";
-
+import toast from "react-hot-toast";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { FaGoogle } from "react-icons/fa";
+import { useState } from "react";
+import useAuth from "../../hooks/useAuth";
 const SignIn = () => {
+  const { signIn, signInWithGoogle } = useAuth()
+
+    const [showLogInError, setShowLogInError] = useState("")
+
+    const location = useLocation()
+    const navigate = useNavigate()
+
+    const handleLoginForm = event => {
+        event.preventDefault()
+        const email = event.target.email.value
+        const password = event.target.password.value
+
+        signIn(email, password)
+            .then((result) => {
+
+                if(result.user){
+                    return (
+                        toast("Good job!", "Login Successful!", "success"
+                        ) && navigate(location?.state ? location.state : "/")
+                    )
+                }
+            })
+            .catch(() => {
+                setShowLogInError("Invalid Email or Password")
+            })
+
+        event.target.reset()
+    }
+    const handleGoogle = e => {
+        e.preventDefault()
+        signInWithGoogle()
+            .then(() => {
+              toast("Good job!", "Google login Successful!!", "success");
+                navigate(location?.state ? location.state : "/")
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+
     return (
         <div>
              <div className="flex justify-center items-center min-h-screen">
@@ -11,7 +54,7 @@ const SignIn = () => {
               Sign in to access your account
             </p>
           </div>
-          <form  className='space-y-6 ng-untouched ng-pristine ng-valid'>
+          <form onSubmit={handleLoginForm} className='space-y-6 ng-untouched ng-pristine ng-valid'>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -34,8 +77,12 @@ const SignIn = () => {
             > Submit
             </button>
           </div>
+          <Link> <p className="text-center mt-5 border p-1 rounded-md "><button onClick={handleGoogle} className="btn border-blue-500 font-bold text-pink-500"><FaGoogle className="text-blue-500 ml-16"></FaGoogle>Login with Google</button></p></Link>
           </form>
-          <p className="text-center font-bold text-lg"><small>New Here? Create an account <Link to="/signUp" className="text-blue-600">SignUp </Link></small></p>
+          {
+            showLogInError && <p className="text-white font-bold">{showLogInError}</p>
+           }
+          <p className="text-center font-bold text-lg mt-2"><small>New Here? Create an account <Link to="/signUp" className="text-blue-600">SignUp </Link></small></p>
          
         </div>
       </div>

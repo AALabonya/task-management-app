@@ -5,7 +5,7 @@ const Banner = () => {
             <div className='px-10 text-black space-y-9 text-center lg:text-right'>
                 <h1 className='text-4xl lg:text-7xl font-bold'>The Best Management  <br /> app in your life.</h1>
                 <p className='text-base lg:text-xl'>Become focused, organized, and calm with Todoist. <br /> The world’s  task manager and to-do list app.</p>
-                <button className='px-8 py-4 text-xl rounded-lg bg-red-500'>Let&apos;s Explore</button>
+                <button className='px-8 py-4 text-xl text-white rounded-lg bg-red-500'>Let&apos;s Explore</button>
             </div>
         </div>
     )
