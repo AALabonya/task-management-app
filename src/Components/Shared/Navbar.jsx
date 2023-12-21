@@ -41,7 +41,7 @@ const Navbar = () => {
                         )
                     }
                     <button>
-                        <Link className='bg-white px-6 py-2 items-center rounded-full'>Login</Link>
+                        <Link to="/signIn" className='bg-white px-6 py-2 items-center rounded-full'>Login</Link>
                     </button>
                 </div>
                 <div className={`absolute px-4 lg:hidden duration-700 list-none space-y-3 w-full bg-green-500 py-6 ${showMenu? 'left-0':'left-[-100%]'}`}>
@@ -53,7 +53,7 @@ const Navbar = () => {
                         )
                     }
                     <button>
-                        <Link className='bg-white px-6 py-2 rounded-full'>Login</Link>
+                        <Link to="/signIn" className='bg-white px-6 py-2 rounded-full'>Login</Link>
                     </button>
                 </div>
             </div>
