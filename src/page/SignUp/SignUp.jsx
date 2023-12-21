@@ -9,7 +9,7 @@ import { Link} from "react-router-dom";
 
 const SignUp = () => {
    
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, formState: { errors } } = useForm();
    
 
 
