@@ -1,0 +1,6 @@
+a.active{
+    background: transparent;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+}

@@ -1,25 +1,27 @@
-const Dashboard = () => {
-    return (
-        <div>
-           <div className="flex justify-between gap-2 mt-2">
-        <div className="flex-1 bg-gradient-to-r from-black text-xl py-2 rounded-md">
-          <div className="divider divider-primary px-2 text-2xl">To-do</div>
-          <div>
-            <ul>
+import { Outlet } from "react-router-dom";
+import DeskNav from "./DashBoardNav/DeskNav";
+import MobileNav from "./DashBoardNav/MobileNav";
 
-            </ul>
+
+const Dashboard = () => {
+
+    return (
+    <div className=''>
+          <div className="grid grid-cols-6 ">
+              <div className="min-h-screen rounded-lg col-span-1">
+                  <div>
+                      <DeskNav className="hidden lg:block" />
+                      <MobileNav className="block lg:hidden" />
+                  </div>
+              </div>
+
+              <div className="min-h-screen bg-gray-100 col-span-5">
+                  <Outlet />
+              </div>
           </div>
-        </div>
-        <div className="flex-1 bg-gradient-to-r from-black text-xl py-2 rounded-md">
-          <div className="divider divider-primary px-2 text-2xl">On Going</div>
-          <div></div>
-        </div>
-        <div className="flex-1 bg-gradient-to-r from-black text-xl py-2 rounded-md">
-          <div className="divider divider-primary px-2 text-2xl">Completed</div>
-        </div>
       </div> 
-        </div>
     );
 };
 
 export default Dashboard;
+

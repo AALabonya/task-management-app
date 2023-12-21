@@ -43,7 +43,7 @@ import Typography from '@mui/material/Typography';
 
 import { Link, NavLink } from 'react-router-dom';
 import { Avatar, CardMedia, Container, MenuItem, Stack } from '@mui/material';
-
+import "./navbar.css"
 import { useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 const drawerWidth = 240
@@ -65,7 +65,7 @@ export default function Navbar(props) {
     };
     const handleLogOut = () => {
         logOut();
-        history.push('/login');
+        history.push('/signIn');
     };
     const handleClose = () => {
         setIsOpen(false); 
@@ -88,7 +88,7 @@ export default function Navbar(props) {
                         title="Shrimp and Chorizo Paella"
                     />
                     <div>
-                        <h3 style={{ color: 'green', fontWeight: 'bold' }} >Welcome {user && user.displayName ? user.displayName : ''}</h3>
+                        <h3 style={{ color: 'black', fontWeight: 'bold' }} >TaskManager</h3>
 
                     </div>
                 </CardMedia>
@@ -96,14 +96,14 @@ export default function Navbar(props) {
             </Typography>
             <Divider />
             <List>
-                <NavLink to="/" style={{ color: 'green', fontWeight: 'bold' }} > <MenuItem> Home</MenuItem></NavLink>
+                <NavLink to="/" style={{ color: 'black', fontWeight: 'bold' }} > <MenuItem> Home</MenuItem></NavLink>
                 {
 
-                    user && <NavLink to="/dashboard" style={{ color: 'green', fontWeight: 'bold' }}> <MenuItem>Dashboard</MenuItem></NavLink>
+                    user && <NavLink to="/dashboard/userDashboard" style={{ color: 'black', fontWeight: 'bold' }}> <MenuItem>Dashboard</MenuItem></NavLink>
                 }
-                <NavLink to="/aboutUs" style={{ color: 'green', fontWeight: 'bold' }}> <MenuItem>About Us</MenuItem></NavLink>
+                <NavLink to="/aboutUs" style={{ color: 'black',  fontWeight: 'bold' }}> <MenuItem>About Us</MenuItem></NavLink>
 
-                <NavLink to="/signUp" style={{ color: 'green', fontWeight: 'bold' }}> <MenuItem>Logout</MenuItem></NavLink>
+                <NavLink to="/signUp" style={{ color: 'black', fontWeight: 'bold' }}> <MenuItem>Logout</MenuItem></NavLink>
 
             </List>
         </Box>
@@ -111,7 +111,7 @@ export default function Navbar(props) {
     return (
         <Box sx={{ display: 'flex', height: '71px' }}>
             <CssBaseline />
-            <AppBar component="nav" sx={{ height: '70px', backgroundColor: '#FFFFFF', color: '#FFEA00' }}>
+            <AppBar component="nav" sx={{ height: '70px', backgroundColor: '#FF9B82', color: '#FFF' }}>
                 <Container maxWidth="lg">
                     <Toolbar>
                         <IconButton
@@ -142,7 +142,7 @@ export default function Navbar(props) {
                                     title="Shrimp and Chorizo Paella"
                                 />
                                 <div>
-                                    <h3 style={{ color: 'green', fontWeight: 'bold' }} >Welcome {user && user.displayName ? user.displayName : ''}</h3>
+                                    <h3 style={{ color: 'black', fontWeight: 'bold' }} >TaskManager</h3>
 
                                 </div>
                             </CardMedia>
@@ -150,14 +150,14 @@ export default function Navbar(props) {
                         <Box sx={{ display: { xs: 'none', sm: 'block' } }} >
 
                             <ListItem>
-                                <NavLink to="/" style={{ color: 'green', fontWeight: 'bold' }} > <MenuItem> Home</MenuItem></NavLink>
+                                <NavLink to="/" style={{ color: 'black', fontWeight: 'bold' }} > <MenuItem> Home</MenuItem></NavLink>
                                
                                 {
 
-                                    user &&  <NavLink to="/dashboard" style={{ color: 'green', fontWeight: 'bold' }}> <MenuItem>Dashboard</MenuItem></NavLink>
+                                    user &&  <NavLink to="/dashboard/userDashboard" style={{ color: 'black', fontWeight: 'bold' }}> <MenuItem>Dashboard</MenuItem></NavLink>
                                 }
                                
-                                <NavLink to="/aboutUs" style={{ color: 'green', fontWeight: 'bold' }}> <MenuItem>About Us</MenuItem></NavLink>
+                                <NavLink to="/aboutUs" style={{ color: 'black', fontWeight: 'bold' }}> <MenuItem>About Us</MenuItem></NavLink>
                                 <Stack direction="row" spacing={2} onClick={handleClose}>
                                     <div
                                         onClick={handleToggleOpen}

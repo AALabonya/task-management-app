@@ -5,6 +5,9 @@ import SignIn from "../page/SignIn/SignIn";
 import SignUp from "../page/SignUp/SignUp";
 import ErrorPage from "../page/ErrorPage";
 import Dashboard from "../page/Dashboard/Dashboard";
+import UserDashboard from "../Components/Dashboard/UserDashboard";
+import CreateNewTask from "../Components/Dashboard/CreateNewTask";
+import SeePreviousTask from "../Components/Dashboard/SeePreviousTask";
 
 
 const Router = createBrowserRouter([
@@ -26,9 +29,24 @@ const Router = createBrowserRouter([
                 element:<SignUp/>
             },
             {
-                path:"/dashboard",
-                element:<Dashboard/>
-            }
+                path:"dashboard",
+                element:<Dashboard/>,
+                children:[
+                    {
+                        path:"userDashboard",
+                        element:<UserDashboard/>
+                    },
+                    {
+                        path:"createNewTask",
+                        element:<CreateNewTask/>
+                    },
+                    {
+                        path:"seePreviousTask",
+                        element:<SeePreviousTask/>
+                    }
+                ]
+            },
+            
         ]
     },
 
