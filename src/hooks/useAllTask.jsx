@@ -10,7 +10,7 @@ const useAllTask = () => {
         queryKey: ['allToDo', user?.email],
         enabled: !!user?.email,
         queryFn: async () => {
-            const res = await axiosSecure.get('/allToDo');
+            const res = await axiosSecure.get(`/allToDo?email=${user?.email}`);
             return res.data;
         }
     })

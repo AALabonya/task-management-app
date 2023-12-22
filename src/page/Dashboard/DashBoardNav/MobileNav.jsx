@@ -51,7 +51,7 @@ const MobileNav = () => {
 
                                 <li>
                                     <Link
-                                        href=""
+                                        to="/dashboard/seePreviousTask"
                                         className="group relative flex justify-center rounded px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700"
                                     >
                                         <BiSkipPreviousCircle />
@@ -82,7 +82,7 @@ const MobileNav = () => {
                                 <div className="border border-gray-700"></div>
                                 <li>
                                     <Link
-                                        href=""
+                                        to="/"
                                         className="group relative flex justify-center rounded px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700"
                                     >
                                         <FaHome />
@@ -96,7 +96,7 @@ const MobileNav = () => {
                                 </li>
                                 <li>
                                     <Link
-                                        href=""
+                                       to="/about"
                                         className="group relative flex justify-center rounded px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700"
                                     >
                                         <FcAbout />

@@ -29,36 +29,21 @@ const UserDashboard = () => {
                     <div className="text-xl">
                       
                         <div className="mt-2">
-                        <ul className='space-y-3 text-lg'>
+                        
                        <Todo/>
-                    </ul>
-                           
-                                {/* {
-                                    toDo.map((all, index) => <div className="border border-gray-300 rounded-md mb-3" key={all._id}><div >{index+1}. {all.title} </div>
-                                            <button 
-                                                  className=" text-red-950 w-12 h-12 p-3"><img src="https://i.ibb.co/2k7vTG4/delete-icon-image-15.png" alt="" />
-                                                  </button>
-                                                  <button 
-                                                  className=" text-red-950 w-12 h-12 p-3"><img src="https://i.ibb.co/rGSWLcH/792883.png" alt="" />
-                                                  </button>
-                                    </div>)
-                                }
-                            */}
                         </div>
 
-
-
                     </div>
-                    <div className=" text-xl">
+                    <div className="text-xl">
                        
-                        <div>
+                        <div className="mt-2">
 
                             <Ongoing/>
                         </div>
                     </div>
-                    <div className="text-xlrounded-md">
+                    <div className="text-xl rounded-md">
                        
-                        <div>
+                        <div className="mt-2">
                             <CompleteList/>
                         </div>
                     </div>

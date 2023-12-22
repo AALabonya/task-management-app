@@ -11,13 +11,16 @@ import { Pagination, Autoplay } from 'swiper/modules';
 const UsedApp = () => {
     return (
        <div>
-         <h1 className="text-center mt-10 font-bold text-5xl">Who Benefits from Our Task <br/>Management App?</h1>
-            <h1 className="text-center mt-4 font-bold text-lg">Explore how our app caters to the needs of various professionals.</h1>
-         <div className='flex justify-center mt-10 mb-10'>
-         <div className='w-1/2'>
+         <h1 className="text-center mt-10 font-bold text-3xl">Who Benefits from Our Task <br/>Management App?</h1>
+            <h1 className="text-center mt-4 font-bold text-base">Explore how our app caters to the needs of various professionals.</h1>
+         <div className='flex justify-center mt-10 mb-10 container flex-col-reverse mx-auto lg:flex-row'>
+         <div className='lg:w-1/2'>
                 <Swiper
-                    slidesPerView={3}
-                    spaceBetween={30}
+                    breakpoints={{
+                        570: { slidesPerView: 2 , spaceBetween: 70 },
+                        768: { slidesPerView: 2, spaceBetween: 10 },
+                        1152: { slidesPerView: 3, spaceBetween: 50 }
+                    }}
                     centeredSlides={true}
                     autoplay={{
                         delay: 2500,
@@ -40,9 +43,11 @@ const UsedApp = () => {
 
                 </Swiper>
             </div>
-            <div className='w-1/2 p-20'>
-                <p>A task management app is akin to a digital assistant, tirelessly dedicated to organizing, structuring, and streamlining your day-to-day responsibilities. It's a virtual hub where chaos transforms into structured plans and goals. At its core, this app is a dynamic space where tasks, big or small, find their place and purpose.</p>
-               <p>Ultimately, this app isn’t just a tool; it’s a companion on your journey toward increased productivity and efficiency. It’s the digital guardian of your tasks, ensuring they don’t slip through the cracks and empowering you to conquer your day with confidence and clarity.</p>
+            <div className='lg:w-1/2 lg:p-20'>
+                <div className='flex justify-center'>
+                <p className=''>A task management app is akin to a digital assistant, tirelessly dedicated to organizing, structuring, and streamlining your day-to-day responsibilities. It's a virtual hub where chaos transforms into structured plans and goals. At its core, this app is a dynamic space where tasks, big or small, find their place and purpose.
+               <br/>Ultimately, this app isn’t just a tool; it’s a companion on your journey toward increased productivity and efficiency. It’s the digital guardian of your tasks, ensuring they don’t slip through the cracks and empowering you to conquer your day with confidence and clarity.</p>
+                </div>
                 
             </div>
 
@@ -54,6 +59,3 @@ const UsedApp = () => {
 
 export default UsedApp;
 
-
-// Who Benefits from Our Task Management App?
-// Explore how our app caters to the needs of various professionals.

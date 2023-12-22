@@ -7,6 +7,10 @@ import Loading from '../../page/Loading';
 import useAllTask from '../../hooks/useAllTask';
 import toast from 'react-hot-toast';
 
+
+
+
+
 const Todo = ({ task, onRefetch }) => {
 
   const { data, isLoading, refetch } = useAllTask();
@@ -25,14 +29,18 @@ const Todo = ({ task, onRefetch }) => {
   }
   ));
 
-  const handleDrop = async (item) => {
+  const handleDrop = (item) => {
     // console.log("this is item for complete", item._id); // Log the dropped item
-    const res = await axiosSecure.patch(`/update/${item._id}?query=todo`);
-    if (res.data.modifiedCount > 0) {
-      refetch();
-      onRefetch()
-      toast("Good job!", "Todo!", "success")
-    }
+    axiosSecure.patch(`/update/${item._id}?query=todo`)
+    .then(res => {
+        if(res.data.modifiedCount){
+         toast("To Do Task")
+         refetch()
+        }
+     })
+      
+      
+    
   };
 
 if(isLoading){
@@ -40,8 +48,8 @@ if(isLoading){
 }
   return (
     <div ref={drop} className={`space-y-3 ${isOver ? 'bg-green-100' : ''}`}>
-      <h1 className='bg-yellow-500 text-xl py-3 text-center'>To Do</h1>
-      <ul ref={drop} className='space-y-3 text-lg'>
+      <h1 className='bg-yellow-500 text-xl py-3 rounded-lg px-2 text-center'>To Do</h1>
+      <ul className='space-y-3 text-lg'>
         {
           data?.map(task =>
             task.status === 'todo' &&

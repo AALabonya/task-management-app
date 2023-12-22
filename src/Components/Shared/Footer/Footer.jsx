@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Footer = () => {
@@ -18,16 +19,16 @@ const Footer = () => {
 				<h3 className="tracki uppercase dark:text-gray-50">Product</h3>
 				<ul className="space-y-1">
 					<li>
-						<a rel="noopener noreferrer" href="#">Features</a>
+						<Link to="/">Home</Link>
+						
 					</li>
 					<li>
-						<a rel="noopener noreferrer" href="#">Integrations</a>
+					<Link to="/dashboard/userDashboard">Dashboard</Link>
+						
 					</li>
 					<li>
-						<a rel="noopener noreferrer" href="#">Pricing</a>
-					</li>
-					<li>
-						<a rel="noopener noreferrer" href="#">FAQ</a>
+					<Link to="/about">About</Link>
+						
 					</li>
 				</ul>
 			</div>
@@ -39,20 +40,6 @@ const Footer = () => {
 					</li>
 					<li>
 						<a rel="noopener noreferrer" href="#">Terms of Service</a>
-					</li>
-				</ul>
-			</div>
-			<div className="space-y-3">
-				<h3 className="uppercase dark:text-gray-50">Developers</h3>
-				<ul className="space-y-1">
-					<li>
-						<a rel="noopener noreferrer" href="#">Public API</a>
-					</li>
-					<li>
-						<a rel="noopener noreferrer" href="#">Documentation</a>
-					</li>
-					<li>
-						<a rel="noopener noreferrer" href="#">Guides</a>
 					</li>
 				</ul>
 			</div>

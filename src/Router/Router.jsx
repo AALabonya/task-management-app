@@ -9,6 +9,7 @@ import UserDashboard from "../Components/Dashboard/UserDashboard";
 import CreateNewTask from "../Components/Dashboard/CreateNewTask";
 import SeePreviousTask from "../Components/Dashboard/SeePreviousTask";
 import About from "../page/About/About";
+import PrivateRoute from "../Provider/PrivateRoute";
 
 
 const Router = createBrowserRouter([
@@ -35,19 +36,19 @@ const Router = createBrowserRouter([
             },
             {
                 path:"dashboard",
-                element:<Dashboard/>,
+                element:<PrivateRoute><Dashboard/></PrivateRoute>,
                 children:[
                     {
                         path:"userDashboard",
-                        element:<UserDashboard/>
+                        element: <PrivateRoute><UserDashboard/></PrivateRoute>
                     },
                     {
                         path:"createNewTask",
-                        element:<CreateNewTask/>
+                        element: <PrivateRoute><CreateNewTask/></PrivateRoute>
                     },
                     {
                         path:"seePreviousTask",
-                        element:<SeePreviousTask/>
+                        element:<PrivateRoute><SeePreviousTask/></PrivateRoute>
                     }
                 ]
             },

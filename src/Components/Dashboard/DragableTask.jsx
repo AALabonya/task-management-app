@@ -1,9 +1,16 @@
 /* eslint-disable react/prop-types */
 import { useDrag } from 'react-dnd';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+import toast from 'react-hot-toast';
+import { useState } from 'react';
+import ModalShow from '../Shared/ModalShow';
 
 // eslint-disable-next-line no-unused-vars
 const DragableTask = ({ task, onRefetch }) => {
+    const [open, setOpen] = useState(false);
+    
+    const handleClose = () => setOpen(false);
+
     const [{ isDragging }, drag] = useDrag(() => ({
         // Specify the drag type as "TASK"
         type: "TASK",
@@ -19,6 +26,7 @@ const DragableTask = ({ task, onRefetch }) => {
 
     const handleDelete = async (id) => {
         const res = await axiosSecure.delete(`/delete/${id}`);
+        toast("Deleted Successful");
         onRefetch()
         console.log(res.data)
     }
@@ -36,7 +44,7 @@ const DragableTask = ({ task, onRefetch }) => {
                             {task.description}
                         </p>
                        <div className='flex justify-between'>
-                        <p className="block mt-1 font-sans text-lg antialiased font-normal leading-relaxed text-gray-700">Deadline: <span className="text-white"><span className='bg-red-400'>{task.deadline}</span></span></p>
+                        <p className="block mt-1 font-sans text-sm antialiased font-normal leading-relaxed text-gray-700">Deadline: <span className="text-white"><span className='text-black text-sm'>{task.date}</span></span></p>
                         <p className="block mt-1 font-sans text-lg antialiased font-normal leading-relaxed text-gray-700"><span className="text-white"><span className='bg-red-500 px-2 py-1 rounded-lg'>{task.priority}</span></span></p>
                        </div>
                     </div>
@@ -47,10 +55,12 @@ const DragableTask = ({ task, onRefetch }) => {
                             </button>
                         </div>
                         <button
+                        onClick={()=>setOpen(true) }
                             className=" text-red-950 w-12 h-12 p-3"><img src="https://i.ibb.co/rGSWLcH/792883.png" alt="" />
                         </button>
                     </div>
                 </div>
+                <ModalShow open={open} setOpen={setOpen} task={task} onRefetch={onRefetch}/>
             </li>
         </div>
     );

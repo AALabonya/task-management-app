@@ -22,7 +22,7 @@ const SignIn = () => {
                 if(result.user){
                     return (
                         toast("Good job!", "Login Successful!", "success"
-                        ) && navigate(location?.state ? location.state : "/")
+                        ) && navigate(location?.state ? location.state : "/dashboard/userDashboard")
                     )
                 }
             })
@@ -37,7 +37,7 @@ const SignIn = () => {
         signInWithGoogle()
             .then(() => {
               toast("Good job!", "Google login Successful!!", "success");
-                navigate(location?.state ? location.state : "/")
+                navigate(location?.state ? location.state : "/dashboard/userDashboard")
             })
             .catch(error => {
                 console.error(error)

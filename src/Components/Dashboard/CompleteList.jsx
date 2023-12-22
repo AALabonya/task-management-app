@@ -8,6 +8,8 @@ import DragableTask from './DragableTask';
 import toast from 'react-hot-toast';
 
 
+
+
 const CompleteList = ({ task, onRefetch }) => {
     const axiosSecure  = useAxiosSecure()
     const { data, isLoading, refetch } = useAllTask();
@@ -27,14 +29,17 @@ const CompleteList = ({ task, onRefetch }) => {
     ));
 
     const handleDrop = async (item) => {
+      
         console.log("this is item for complete", item._id); // Log the dropped item
-        const res = await axiosSecure.patch(`/update/${item._id}?query=complete`);
-        if (res.data.modifiedCount > 0) {
-            toast("Good job!", "Todo!", "success")
-            refetch();
-            onRefetch()
+        axiosSecure.patch(`/update/${item._id}?query=complete`)
+        .then(res => {
+            if(res.data.modifiedCount){
+             toast("Task Completed")
+             refetch()
+            }
+         })
            
-        }
+        
     };
 
        if(isLoading){
@@ -43,8 +48,8 @@ const CompleteList = ({ task, onRefetch }) => {
 
     return (
         <div ref={drop} className={`space-y-3 ${isOver ? 'bg-green-100' : ''}`}>
-            <h1 className='bg-green-500 text-xl py-3 text-center'>Completed</h1>
-            <ul ref={drop} className='space-y-3 text-lg'>
+            <h1 className='bg-green-500 text-xl py-3 rounded-lg px-2 text-center'>Completed</h1>
+            <ul className='space-y-3 text-lg'>
                 {
                     data?.map(task =>
                         task.status === 'complete' &&
