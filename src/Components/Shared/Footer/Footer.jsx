@@ -11,7 +11,7 @@ const Footer = () => {
 				<div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-400">
                 <img src="https://i.postimg.cc/13Nzyzw4/logooooooooooooooooooo11.jpg" alt="" className='rounded-full w-14'/>
 				</div>
-				<span className="self-center text-2xl font-semibold">Brand name</span>
+				<span className="self-center text-2xl font-semibold">TaskManager</span>
 			</a>
 		</div>
 		<div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
