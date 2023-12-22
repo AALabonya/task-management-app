@@ -4,6 +4,7 @@ import { FaHome, FaEdit } from "react-icons/fa";
 import { CiLogout } from "react-icons/ci";
 import { BiSkipPreviousCircle } from "react-icons/bi";
 import { FcAbout } from "react-icons/fc";
+import { FaChalkboardUser } from "react-icons/fa6";
 import useAuth from '../../../hooks/useAuth';
 
 const DeskNav = () => {
@@ -20,9 +21,7 @@ const DeskNav = () => {
                         <ul className="mt-4 space-y-2">
                             <li className="flex justify-start items-center"><NavLink to="/dashboard/userDashboard">
                                 <div className="flex items-center gap-2 mb-5 mt-6">
-                                    <FaHome />{user && user.displayName ? user.displayName : ''} <small className="text-[10px]">[Task]</small>
-                                   
-                                </div></NavLink></li>
+                                <FaChalkboardUser />Profile</div></NavLink></li>
 
                             <li><NavLink to="/dashboard/createNewTask">
                                 <div className="flex items-center gap-2 mb-5"><FaEdit />

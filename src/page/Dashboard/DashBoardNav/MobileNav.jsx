@@ -3,9 +3,10 @@ import { FaHome, FaEdit } from "react-icons/fa";
 import { CiLogout } from "react-icons/ci";
 import { BiSkipPreviousCircle } from "react-icons/bi";
 import { FcAbout } from "react-icons/fc";
+import { FaChalkboardUser } from "react-icons/fa6";
 import useAuth from '../../../hooks/useAuth';
 const MobileNav = () => {
-    const { user, logOut } = useAuth()
+    const { logOut } = useAuth()
     return (
         <div className='block lg:hidden'>
             <div className="flex h-screen w-full flex-col justify-between border-e">
@@ -23,11 +24,11 @@ const MobileNav = () => {
                                     to="/dashboard/userDashboard"
                                     className="t group relative flex justify-center rounded bg-blue-50 px-2 py-1.5 text-blue-700"
                                 >
-                                    <FaHome />
+                                    <FaChalkboardUser />
                                     <span
                                         className="absolute start-full top-1/2 ms-4 -translate-y-1/2 rounded bg-gray-900 px-2 py-1.5 text-xs font-medium text-white opacity-0 group-hover:opacity-100"
                                     >
-                                        {user && user.displayName ? user.displayName : ''}
+                                       Profile
                                     </span>
                                 </Link>
                             </div>

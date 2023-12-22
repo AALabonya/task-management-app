@@ -18,7 +18,8 @@ const CreateNewTask = () => {
           title: data.title,
           description: data.description,
           date: data.date,
-          priority: data.priority
+          priority: data.priority,
+          status: 'todo',
         };
         axiosSecure.post("/allToDo", toDos).then((res) => {
           if (res.data.insertedId) {
@@ -50,7 +51,6 @@ const CreateNewTask = () => {
                   required
                 />
           
-
               <label className="block mb-1 mt-3  font-semibold text-base text-gray-900 dark:text-white">
                 Description:
               </label>

@@ -101,7 +101,7 @@ export default function Navbar(props) {
 
                     user && <NavLink to="/dashboard/userDashboard" style={{ color: 'black', fontWeight: 'bold' }}> <MenuItem>Dashboard</MenuItem></NavLink>
                 }
-                <NavLink to="/aboutUs" style={{ color: 'black',  fontWeight: 'bold' }}> <MenuItem>About Us</MenuItem></NavLink>
+                <NavLink to="/about" style={{ color: 'black',  fontWeight: 'bold' }}> <MenuItem>About</MenuItem></NavLink>
 
                 <NavLink to="/signUp" style={{ color: 'black', fontWeight: 'bold' }}> <MenuItem>Logout</MenuItem></NavLink>
 
@@ -157,7 +157,7 @@ export default function Navbar(props) {
                                     user &&  <NavLink to="/dashboard/userDashboard" style={{ color: 'black', fontWeight: 'bold' }}> <MenuItem>Dashboard</MenuItem></NavLink>
                                 }
                                
-                                <NavLink to="/aboutUs" style={{ color: 'black', fontWeight: 'bold' }}> <MenuItem>About Us</MenuItem></NavLink>
+                                <NavLink to="/about" style={{ color: 'black', fontWeight: 'bold' }}> <MenuItem>About</MenuItem></NavLink>
                                 <Stack direction="row" spacing={2} onClick={handleClose}>
                                     <div
                                         onClick={handleToggleOpen}

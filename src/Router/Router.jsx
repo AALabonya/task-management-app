@@ -8,6 +8,7 @@ import Dashboard from "../page/Dashboard/Dashboard";
 import UserDashboard from "../Components/Dashboard/UserDashboard";
 import CreateNewTask from "../Components/Dashboard/CreateNewTask";
 import SeePreviousTask from "../Components/Dashboard/SeePreviousTask";
+import About from "../page/About/About";
 
 
 const Router = createBrowserRouter([
@@ -19,6 +20,10 @@ const Router = createBrowserRouter([
             {
                 path:"/",
                 element:<Home/>
+            },
+            {
+               path:"/about",
+               element:<About/>
             },
             {
                 path:"/signIn",
