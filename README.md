@@ -9,4 +9,5 @@ Technology :
 - aos
 - axios 
 - firebase
+- react-dnd
 - react-dnd-html5-backend
