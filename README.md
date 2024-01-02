@@ -11,3 +11,5 @@ Technology :
 - firebase
 - react-dnd
 - react-dnd-html5-backend
+- react-hook-form
+- react-hot-toast
