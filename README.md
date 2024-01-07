@@ -13,3 +13,5 @@ Technology :
 - react-dnd-html5-backend
 - react-hook-form
 - react-hot-toast
+- react-icons
+- react-router-dom
