@@ -15,3 +15,4 @@ Technology :
 - react-hot-toast
 - react-icons
 - react-router-dom
+- swiper js
